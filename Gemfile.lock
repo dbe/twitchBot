@@ -53,6 +53,7 @@ GEM
     byebug (4.0.1)
       columnize (= 0.9.0)
       rb-readline (= 0.5.2)
+    cinch (2.2.4)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -194,6 +195,7 @@ DEPENDENCIES
   better_errors
   bootstrap-sass
   byebug
+  cinch
   coffee-rails (~> 4.1.0)
   haml-rails
   html2haml
