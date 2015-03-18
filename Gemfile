@@ -12,6 +12,7 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'puma'
 gem 'cinch'
+gem 'rest-client'
 
 group :development, :test do
   gem 'byebug'
