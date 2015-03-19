@@ -1,6 +1,6 @@
 namespace :tb do
 
-  desc "TODO"
+  desc "twitchBot related rake tasks"
 
   task run_bot: :environment do
     require 'cinch'
@@ -45,26 +45,15 @@ namespace :tb do
 
   end
 
-  task pay_viewers: :environment do
-    require 'rest_client'
-    require 'json'
+  task run_scheduler: :environment do
+    require 'rufus-scheduler'
+    
+    scheduler = Rufus::Scheduler.new
 
-    channel = 'tsm_theoddone'
-
-    RestClient.get("http://tmi.twitch.tv/group/user/#{channel}/chatters") do |response, request, result|
-      if(result.code_type <= Net::HTTPSuccess)
-        #puts "Response: #{response}"
-        parsed = JSON.parse(response)
-        viewer_names = parsed["chatters"]["viewers"]
-
-        viewer_names.each do |name|
-          #This is inefficient, should do batch lookup for all viewer_names.
-          viewer = Viewer.find_or_create_by(:name => name)
-          PointTransaction.system_pay(viewer, 100)
-        end
-      else
-        puts "BROKEN"
-      end
+    scheduler.every '1m' do
+      Viewer.pay_viewers
     end
+
+    scheduler.join
   end
 end

@@ -13,6 +13,7 @@ gem 'haml-rails'
 gem 'puma'
 gem 'cinch'
 gem 'rest-client'
+gem 'rufus-scheduler'
 
 group :development, :test do
   gem 'byebug'
