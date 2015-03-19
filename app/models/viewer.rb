@@ -19,25 +19,17 @@ class Viewer < ActiveRecord::Base
 
 
   def self.pay_viewers
-    require 'rest_client'
-    require 'json'
+    puts "Paying viewers"
 
-    channel = 'tsm_theoddone'
+    Stream.all.each do |stream|
+      puts "Paying viewers of stream: #{stream.name}"
+      viewers = stream.fetch_viewers
+      puts "Stream had #{viewers.count} viewers"
 
-    RestClient.get("http://tmi.twitch.tv/group/user/#{channel}/chatters") do |response, request, result|
-      if(result.code_type <= Net::HTTPSuccess)
-        #puts "Response: #{response}"
-        parsed = JSON.parse(response)
-        viewer_names = parsed["chatters"]["viewers"]
-
-        viewer_names.each do |name|
-          #This is inefficient, should do batch lookup for all viewer_names.
-          viewer = Viewer.find_or_create_by(:name => name)
-          PointTransaction.system_pay(viewer, 100)
-        end
-      else
-        puts "BROKEN"
+      viewers.each do |viewer|
+        PointTransaction.system_pay(viewer, 100)
       end
     end
   end
+
 end
