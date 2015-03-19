@@ -50,7 +50,9 @@ namespace :tb do
     
     scheduler = Rufus::Scheduler.new
 
+    puts "Scheduling pay_viewers"
     scheduler.every '1m' do
+      puts "Paying viewers"
       Viewer.pay_viewers
     end
 
