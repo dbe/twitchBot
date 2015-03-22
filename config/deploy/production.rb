@@ -32,6 +32,8 @@ role :web, %w{ec2-user@ec2-54-152-105-174.compute-1.amazonaws.com}
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
+set :linked_files, %w{config/database.yml}
+
 
 
 # Custom SSH Options
