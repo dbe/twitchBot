@@ -22,6 +22,7 @@ group :development, :test do
   gem 'spring'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
+  gem 'capistrano3-puma'
   gem 'pry-rails'
   gem 'pry-rescue'
 end

@@ -66,6 +66,9 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano3-puma (0.9.0)
+      capistrano (~> 3.0)
+      puma (>= 2.6)
     cinch (2.2.4)
     coderay (1.1.0)
     coffee-rails (4.1.0)
@@ -223,6 +226,7 @@ DEPENDENCIES
   byebug
   capistrano-rails
   capistrano-rvm
+  capistrano3-puma
   cinch
   coffee-rails (~> 4.1.0)
   haml-rails

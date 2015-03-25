@@ -20,6 +20,7 @@
 # role :app, %w{deploy@example.com}, my_property: :my_value
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 role :web, %w{ec2-user@ec2-54-152-105-174.compute-1.amazonaws.com}
+role :app, %w{ec2-user@ec2-54-152-105-174.compute-1.amazonaws.com}
 # role :db,  %w{deploy@example.com}
 
 
@@ -33,6 +34,9 @@ role :web, %w{ec2-user@ec2-54-152-105-174.compute-1.amazonaws.com}
 # Feel free to add new variables to customise your setup.
 
 set :linked_files, %w{config/database.yml}
+
+#Adding .conf so that I can include *.conf in nginx configuration
+set :nginx_config_name, 'twitchBot_production.conf'
 
 
 
