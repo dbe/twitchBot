@@ -14,24 +14,22 @@ gem 'puma'
 gem 'cinch'
 gem 'rest-client'
 gem 'rufus-scheduler'
+gem 'sqlite3'
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'pry-rails'
+  gem 'pry-rescue'
 end
 
 group :development do
   gem 'better_errors'
   gem 'html2haml'
   gem 'rails_layout'
-end
-
-group :development, :test do
-  gem 'pry-rails'
-  gem 'pry-rescue'
-  gem 'sqlite3'
 end
 
 group :production do

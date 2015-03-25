@@ -63,6 +63,9 @@ GEM
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     cinch (2.2.4)
     coderay (1.1.0)
     coffee-rails (4.1.0)
@@ -219,6 +222,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capistrano-rails
+  capistrano-rvm
   cinch
   coffee-rails (~> 4.1.0)
   haml-rails
