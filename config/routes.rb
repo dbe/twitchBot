@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root 'viewers#index'
-  resources :viewers
+  resources :viewers, only: [:index, :show]
 
 end

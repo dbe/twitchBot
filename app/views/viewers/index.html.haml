@@ -1,23 +1,15 @@
-%h1 Listing viewers
+%h1 Top Viewers
 
 %table
   %thead
     %tr
       %th Name
       %th Points
-      %th
-      %th
-      %th
 
   %tbody
     - @viewers.each do |viewer|
       %tr
-        %td= viewer.name
+        %td= link_to "#{viewer.name}", viewer
         %td= viewer.points
-        %td= link_to 'Show', viewer
-        %td= link_to 'Edit', edit_viewer_path(viewer)
-        %td= link_to 'Destroy', viewer, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Viewer', new_viewer_path
