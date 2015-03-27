@@ -1,4 +1,5 @@
 class Stream < ActiveRecord::Base
+  has_many :point_transaction
 
   def fetch_viewers
     require 'rest_client'

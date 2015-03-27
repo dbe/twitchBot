@@ -27,7 +27,7 @@ class Viewer < ActiveRecord::Base
       puts "Stream had #{viewers.count} viewers"
 
       viewers.each do |viewer|
-        PointTransaction.system_pay(viewer, 100)
+        PointTransaction.system_pay(viewer, 100, stream)
       end
     end
   end
