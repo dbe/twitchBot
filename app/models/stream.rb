@@ -29,4 +29,17 @@ class Stream < ActiveRecord::Base
     return viewers
   end
 
+  #{:viewer, :points}
+  #Memoized for performance, may be an issue for consistency
+  def supporters
+    if not @supporters
+      @supporters = []
+
+      PointTransaction.where(:stream => self).group_by(&:to).each do |viewer, transactions|
+        @supporters.push({:viewer => viewer, :points => transactions.map(&:amount).reduce(:+)})
+      end
+    end
+
+    return @supporters
+  end
 end
