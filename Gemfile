@@ -15,7 +15,6 @@ gem 'cinch'
 gem 'rest-client'
 gem 'rufus-scheduler'
 gem 'sqlite3'
-gem 'god'
 
 group :development, :test do
   gem 'byebug'
