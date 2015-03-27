@@ -52,8 +52,8 @@ namespace :tb do
 
 
     Viewer.pay_viewers
-    puts "Scheduling pay_viewers every 30 seconds in the future"
-    scheduler.every '30s' do
+    puts "Scheduling pay_viewers every 5 minutes in the future"
+    scheduler.every '5m' do
       Viewer.pay_viewers
     end
 

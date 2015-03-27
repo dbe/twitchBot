@@ -1,2 +1,14 @@
-%h1 Streams#index
-%p Find me in app/views/streams/index.html.haml
+%h1 Streams using Dongerinos
+
+%table
+  %thead
+    %tr
+      %th Stream
+      %th Dongerinos generated
+
+  %tbody
+    - @streams.each do |stream|
+      %tr
+        %td= link_to "#{stream.name}", stream
+        %td= stream.points_generated
+%br

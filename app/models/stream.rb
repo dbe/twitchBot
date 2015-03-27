@@ -35,11 +35,23 @@ class Stream < ActiveRecord::Base
     if not @supporters
       @supporters = []
 
-      PointTransaction.where(:stream => self).group_by(&:to).each do |viewer, transactions|
+      PointTransaction.includes(:to).where(:stream => self).group_by(&:to).each do |viewer, transactions|
         @supporters.push({:viewer => viewer, :points => transactions.map(&:amount).reduce(:+)})
       end
     end
 
     return @supporters
+  end
+
+  def points_generated
+    if not @points_generated
+      @points_generated = 0
+
+      if self.supporters.any?
+        @points_generated = (self.supporters.map {|s| s[:points]}).reduce(:+)
+      end
+    end
+
+    return @points_generated
   end
 end
