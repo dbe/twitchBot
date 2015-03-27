@@ -45,7 +45,7 @@ namespace :tb do
 
   end
 
-  task run_scheduler: :environment do
+  task pay_viewers: :environment do
     require 'rufus-scheduler'
     
     scheduler = Rufus::Scheduler.new
