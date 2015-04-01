@@ -1,0 +1,21 @@
+.row
+  .col-md-12
+    #past-broadcasts
+      %table.table
+        %caption
+          Broadcast history
+        %thead
+          %tr
+            %th
+              Cost
+            %th
+              Message
+            %th
+              Viewer
+            %th
+              Time
+        %tbody
+          - @broadcasts.each do |broadcast|
+            %td
+              hi
+

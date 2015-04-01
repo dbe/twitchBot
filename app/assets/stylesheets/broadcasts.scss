@@ -2,14 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#current-broadcast-page {
-  margin-top: 60px;
+#main {
+  background-color: #fff;
+  padding-top: 60px;
 }
 
-#broadcast .panel {
+#broadcast {
   margin: 0;
   text-align: center;
   padding: 30px;
+  border-color: #ddd;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px 4px 0 0;
 }
 
 #viewer-info #viewer {
@@ -31,5 +36,17 @@
 
 #faq-button {
   text-color: white;
+}
+
+
+//-----------
+
+#past-broadcasts {
+  background-color: #fff;
+  border-color: #ddd;
+  border-width: 1px;
+  border-radius: 4px 4px 0 0;
+  border-style: solid;
+
 }
 
