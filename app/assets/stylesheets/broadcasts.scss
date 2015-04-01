@@ -2,33 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#broadcast-page {
+#current-broadcast-page {
   margin-top: 60px;
 }
 
-#broadcast {
+#broadcast .panel {
+  margin: 0;
   text-align: center;
   padding: 30px;
 }
 
-#broadcast.panel {
-  margin: 0;
-}
-
-#viewer {
+#viewer-info #viewer {
   font-size: 16px;
 }
 
-#paid {
+#viewer-info #paid {
   text-align: right;
   font-size: 16px;
 }
 
-#note {
+#general-info {
+  margin-top: 20px;
+}
+
+#faq-info {
   text-align: right;
-  margin-top: 10px;
 }
 
 #faq-button {
   text-color: white;
 }
+

@@ -1,5 +1,13 @@
 class BroadcastsController < ApplicationController
-  def index
+  def current
     @broadcast = Broadcast.current
+  end
+
+  def index
+    @broadcasts = Broadcast.all
+  end
+
+  def show
+
   end
 end
