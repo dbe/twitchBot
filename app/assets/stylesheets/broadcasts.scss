@@ -1,3 +1,34 @@
 // Place all the styles related to the broadcasts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#broadcast-page {
+  margin-top: 60px;
+}
+
+#broadcast {
+  text-align: center;
+  padding: 30px;
+}
+
+#broadcast.panel {
+  margin: 0;
+}
+
+#viewer {
+  font-size: 16px;
+}
+
+#paid {
+  text-align: right;
+  font-size: 16px;
+}
+
+#note {
+  text-align: right;
+  margin-top: 10px;
+}
+
+#faq-button {
+  text-color: white;
+}
