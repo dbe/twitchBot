@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327220103) do
+ActiveRecord::Schema.define(version: 20150401200520) do
+
+  create_table "broadcasts", force: :cascade do |t|
+    t.integer  "viewer_id"
+    t.datetime "time"
+    t.integer  "paid"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "point_transactions", force: :cascade do |t|
     t.integer  "from_id"
