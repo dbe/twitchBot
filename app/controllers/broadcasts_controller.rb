@@ -6,6 +6,11 @@ class BroadcastsController < ApplicationController
 
   def index
     @broadcasts = Broadcast.order('time DESC')
+
+    if(params[:viewer_id])
+      @broadcasts = @broadcasts.where(:viewer => params[:viewer_id])
+    end
+
   end
 
   def show

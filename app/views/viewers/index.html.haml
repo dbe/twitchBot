@@ -1,15 +1,34 @@
-%h1 Top Viewers
+.row
+  .col-xs-12.col-md-6
+    .table-container
+      %table
+        %caption
+          Viewers by points
+        %thead
+          %tr
+            %th Name
+            %th Points
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Points
+        %tbody
+          - @viewers.each do |viewer|
+            %tr
+              %td= link_to "#{viewer.name}", viewer
+              %td= viewer.points
 
-  %tbody
-    - @viewers.each do |viewer|
-      %tr
-        %td= link_to "#{viewer.name}", viewer
-        %td= viewer.points
+  .col-xs-12.col-md-6
+    .table-container
+      %table
+        %caption
+          Viewers by broadcasts
+        %thead
+          %tr
+            %th Name
+            %th Broadcasts
 
-%br
+        %tbody
+          - @viewers_by_broadcasts.each do |viewer, broadcast_count|
+            %tr
+              %td
+                = link_to viewer.name, viewer
+              %td
+                = link_to broadcast_count, viewer_broadcasts_path(viewer)

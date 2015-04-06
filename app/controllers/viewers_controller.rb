@@ -5,6 +5,7 @@ class ViewersController < ApplicationController
   # GET /viewers.json
   def index
     @viewers = Viewer.order('points DESC')
+    @viewers_by_broadcasts = Broadcast.group(:viewer).count.sort_by {|k,v| v}.reverse
   end
 
   # GET /viewers/1

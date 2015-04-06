@@ -1,14 +1,16 @@
-%h1 Streams using Dongerinos
+.row
+  .col-xs-12.col-md-12
+    .table-container
+      %table
+        %caption
+          Streams generating Dongerinos
+        %thead
+          %tr
+            %th Stream
+            %th Dongerinos
 
-%table
-  %thead
-    %tr
-      %th Stream
-      %th Dongerinos generated
-
-  %tbody
-    - @streams.each do |stream|
-      %tr
-        %td= link_to "#{stream.name}", stream
-        %td= stream.points_generated
-%br
+        %tbody
+          - @streams.each do |stream|
+            %tr
+              %td= link_to "#{stream.name}", stream
+              %td= number_with_delimiter(stream.points_generated)
