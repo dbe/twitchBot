@@ -7,15 +7,21 @@
         %thead
           %tr
             %th
-              Cost
+              Time
             %th
               Message
             %th
-              Viewer
+              Cost
             %th
-              Time
+              Viewer
         %tbody
           - @broadcasts.each do |broadcast|
             %td
-              hi
+              = "#{time_ago_in_words(broadcast.time)} ago"
+            %td
+              = broadcast.message
+            %td
+              = broadcast.paid
+            %td
+              = link_to broadcast.viewer.name, broadcast.viewer
 
