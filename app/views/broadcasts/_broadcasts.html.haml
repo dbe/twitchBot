@@ -1,0 +1,25 @@
+%table.table
+  %caption
+    Broadcast history
+  %thead
+    %tr
+      %th
+        Time
+      %th
+        Message
+      %th
+        Cost
+      %th
+        Viewer
+  %tbody
+    - broadcasts.each do |broadcast|
+      %tr
+        %td
+          = "#{time_ago_in_words(broadcast.time)} ago"
+        %td
+          = link_to broadcast.message, broadcast
+        %td
+          = broadcast.paid
+        %td
+          = link_to broadcast.viewer.name, broadcast.viewer
+

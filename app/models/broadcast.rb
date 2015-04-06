@@ -4,4 +4,5 @@ class Broadcast < ActiveRecord::Base
   def self.current
     Broadcast.order('time DESC').limit(1).first
   end
+
 end

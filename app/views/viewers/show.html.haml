@@ -1,9 +1,18 @@
-%p#notice= notice
+.row
+  .col-md-6.col-xs-12
+    %dl.dl-horizontal
+      %dt
+        Name
+      %dd
+        = @viewer.name
 
-%p
-  %b Name:
-  = @viewer.name
+      %dt
+        Dongerinos
+      %dd
+        = @viewer.points
 
-%p
-  %b Points:
-  = @viewer.points
+
+  .col-md-6.col-xs-12
+    .table-container
+      = render :partial => 'broadcasts/broadcasts', :locals => {:broadcasts => @broadcasts}
+
