@@ -5,7 +5,7 @@ class BroadcastsController < ApplicationController
   end
 
   def index
-    @broadcasts = Broadcast.all
+    @broadcasts = Broadcast.order('time DESC')
   end
 
   def show
