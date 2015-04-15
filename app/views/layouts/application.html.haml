@@ -1,5 +1,6 @@
 !!!
 %html
+  = render :partial => 'mix_panel'
   %head
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title= content_for?(:title) ? yield(:title) : 'Twitch Bot'
@@ -14,3 +15,9 @@
       %main#main{:role => "main"}
         = render 'layouts/messages'
         = yield
+
+  :javascript
+    mixpanel.track('page viewed', {
+      'page name' : document.title,
+      'url' : window.location.pathname
+    });
